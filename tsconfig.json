@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "noImplicitAny": false,
+        "strict": true,
+        "pretty": true,
+        "typeRoots": [
+            "./node_modules/phaser/types"
+        ],
+        "types": [
+            "Phaser"
+        ]
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "name": "boxhead",
+    "version": "1.0.0",
+    "description": "Boxhead clone",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zbowhay/boxhead.git"
+    },
+    "author": "Zachary Bowhay",
+    "license": "ISC",
+    "homepage": "https://github.com/zbowhay/boxhead#readme",
+    "bugs": {
+        "url": "https://github.com/zbowhay/boxhead/issues"
+    },
+    "scripts": {
+        "start": "node --inspect=5858 -r ts-node/register ./src/server.ts",
+        "start:dev": "concurrently \"npm run server:watch\" \"npm run ts:watch\" \"npm run watchify\"",
+        "server:watch": "nodemon",
+        "ts:watch": "tsc -w",
+        "watchify": "watchify ./src/game/scripts/main.js -o ./src/game/scripts/bundle.js",
+        "build": "tsc && browserify ./src/game/scripts/main.js -o ./src/game/scripts/bundle.js"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            ".git",
+            "node_modules",
+            "**/*.spec.ts"
+        ],
+        "watch": [
+            "src/server.ts"
+        ],
+        "exec": "npm start",
+        "ext": "ts",
+        "delay": "1500"
+    },
+    "dependencies": {
+        "@types/express": "^4.17.6",
+        "@types/morgan": "^1.9.0",
+        "@types/node": "^13.13.0",
+        "browserify": "^16.5.1",
+        "browserify-middleware": "^8.1.1",
+        "express": "^4.17.1",
+        "morgan": "^1.10.0",
+        "phaser": "^3.22.0",
+        "ts-node": "^8.8.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3",
+        "typescript": "^3.8.3",
+        "watchify": "^3.11.1"
+    }
+}

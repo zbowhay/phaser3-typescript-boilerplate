@@ -1,0 +1,14 @@
+body {
+    display: grid;
+    grid-template-columns: auto 800px auto;
+    grid-template-rows: auto 600px auto;
+    background-color: darkslategray;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#canvas-container {
+    grid-column: 2;
+    grid-row: 2;
+}
