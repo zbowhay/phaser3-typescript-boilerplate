@@ -35,7 +35,7 @@
         "delay": "1500"
     },
     "dependencies": {
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "morgan": "^1.10.0",
         "phaser": "^3.22.0"
     },
